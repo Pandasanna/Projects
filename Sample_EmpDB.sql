@@ -1,3 +1,7 @@
+-- Tables: Employees, Job history, Jobs, Departments, Locations, Countries, Regions.
+-- PK: employee_id, job_id, department_id, location_id, country_id, region_id
+
+
 -- Create table Regions
 CREATE TABLE regions
     ( region_id      NUMBER 
@@ -197,7 +201,7 @@ ADD ( CONSTRAINT jhist_emp_id_st_date_pk
     ) ;
 
 
--- Employee details view
+-- Create Employee details view
 CREATE OR REPLACE VIEW emp_details_view
   (employee_id,
    job_id,
@@ -246,7 +250,7 @@ WHERE e.department_id = d.department_id
   AND j.job_id = e.job_id 
 WITH READ ONLY;
 
-
+-- Populate tables with sample data
 -- Insert values in table countries regions
 INSERT INTO regions VALUES 
         ( 1
